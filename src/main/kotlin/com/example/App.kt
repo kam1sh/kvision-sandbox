@@ -55,7 +55,6 @@ class App : Application() {
 
         root("kvapp") {
             LoginWindow().show()
-            println("123")
         }
     }
 }
