@@ -36,6 +36,7 @@ repositories {
 // Versions
 val kotlinVersion: String by System.getProperties()
 val kvisionVersion: String by System.getProperties()
+val ktorVersion: String by System.getProperties()
 
 // Custom Properties
 val webDir = file("src/main/web")
@@ -59,17 +60,20 @@ kotlin {
                     open = false,
                     port = 3000,
                     proxy = mapOf(
+                        "/api/*" to "http://localhost:8080",
                         "/kv/*" to "http://localhost:8080",
                         "/kvws/*" to mapOf("target" to "ws://localhost:8080", "ws" to true)
                     ),
                     contentBase = listOf("$buildDir/processedResources/Js/main")
                 )
             }
+/*
             testTask {
                 useKarma {
                     useChromeHeadless()
                 }
             }
+*/
         }
     }
     sourceSets["main"].dependencies {
@@ -77,6 +81,19 @@ kotlin {
         implementation(npm("po2json"))
         implementation(npm("grunt"))
         implementation(npm("grunt-pot"))
+        api(npm("text-encoding"))
+        api(npm("bufferutil"))
+        api(npm("utf-8-validate"))
+        api(npm("abort-controller"))
+        api(npm("fs"))
+
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.3.7")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7")
+        implementation("io.ktor:ktor-client-json:$ktorVersion")
+        implementation("io.ktor:ktor-client-js:$ktorVersion")
+        implementation("io.ktor:ktor-client-json-js:$ktorVersion")
+        implementation("io.ktor:ktor-client-serialization-js:$ktorVersion")
+        implementation("io.ktor:ktor-client-logging-js:$ktorVersion")
 
         implementation("pl.treksoft:kvision:$kvisionVersion")
         implementation("pl.treksoft:kvision-bootstrap:$kvisionVersion")
