@@ -1,0 +1,22 @@
+{
+  "name": "kvision-sandbox",
+  "version": "1.0.0",
+  "description": "Whenever you want to produce a minified \"production\" version of your code pass in `-Pproduction=true` or `-Pprod=true` to your build command. ### Resource Processing * generatePotFile - Generates a `src/main/resources/i18n/messages.pot` translation template file. ### Running * run - Starts a webpack dev server on port 3000. ### Packaging * browserWebpack - Bundles the compiled js files into `build/distributions` * zip - Packages a zip archive with all required files into `build/libs/*.zip`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kam1sh/kvision-sandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kam1sh/kvision-sandbox/issues"
+  },
+  "homepage": "https://github.com/kam1sh/kvision-sandbox#readme",
+  "dependencies": {
+    "fomantic-ui": "^2.8.6"
+  }
+}

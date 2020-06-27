@@ -67,13 +67,11 @@ kotlin {
                     contentBase = listOf("$buildDir/processedResources/Js/main")
                 )
             }
-/*
             testTask {
                 useKarma {
                     useChromeHeadless()
                 }
             }
-*/
         }
     }
     sourceSets["main"].dependencies {
@@ -96,15 +94,9 @@ kotlin {
         implementation("io.ktor:ktor-client-logging-js:$ktorVersion")
 
         implementation("pl.treksoft:kvision:$kvisionVersion")
-        implementation("pl.treksoft:kvision-bootstrap:$kvisionVersion")
-        implementation("pl.treksoft:kvision-bootstrap-css:$kvisionVersion")
-        implementation("pl.treksoft:kvision-bootstrap-datetime:$kvisionVersion")
-        implementation("pl.treksoft:kvision-bootstrap-select:$kvisionVersion")
-        implementation("pl.treksoft:kvision-bootstrap-spinner:$kvisionVersion")
-        implementation("pl.treksoft:kvision-bootstrap-upload:$kvisionVersion")
-        implementation("pl.treksoft:kvision-bootstrap-dialog:$kvisionVersion")
-        implementation("pl.treksoft:kvision-fontawesome:$kvisionVersion")
         implementation("pl.treksoft:kvision-i18n:$kvisionVersion")
+/*
+        implementation("pl.treksoft:kvision-fontawesome:$kvisionVersion")
         implementation("pl.treksoft:kvision-richtext:$kvisionVersion")
         implementation("pl.treksoft:kvision-handlebars:$kvisionVersion")
         implementation("pl.treksoft:kvision-datacontainer:$kvisionVersion")
@@ -114,6 +106,7 @@ kotlin {
         implementation("pl.treksoft:kvision-pace:$kvisionVersion")
         implementation("pl.treksoft:kvision-moment:$kvisionVersion")
         implementation("pl.treksoft:kvision-toast:$kvisionVersion")
+*/
     }
     sourceSets["test"].dependencies {
         implementation(kotlin("test-js"))
