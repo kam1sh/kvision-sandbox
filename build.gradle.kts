@@ -95,18 +95,6 @@ kotlin {
 
         implementation("pl.treksoft:kvision:$kvisionVersion")
         implementation("pl.treksoft:kvision-i18n:$kvisionVersion")
-/*
-        implementation("pl.treksoft:kvision-fontawesome:$kvisionVersion")
-        implementation("pl.treksoft:kvision-richtext:$kvisionVersion")
-        implementation("pl.treksoft:kvision-handlebars:$kvisionVersion")
-        implementation("pl.treksoft:kvision-datacontainer:$kvisionVersion")
-        implementation("pl.treksoft:kvision-redux:$kvisionVersion")
-        implementation("pl.treksoft:kvision-chart:$kvisionVersion")
-        implementation("pl.treksoft:kvision-tabulator:$kvisionVersion")
-        implementation("pl.treksoft:kvision-pace:$kvisionVersion")
-        implementation("pl.treksoft:kvision-moment:$kvisionVersion")
-        implementation("pl.treksoft:kvision-toast:$kvisionVersion")
-*/
     }
     sourceSets["test"].dependencies {
         implementation(kotlin("test-js"))
