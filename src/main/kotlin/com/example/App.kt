@@ -17,10 +17,6 @@ fun runBlocking(block: suspend (scope : CoroutineScope) -> Unit): dynamic = Glob
 
 class App : Application() {
 
-    init {
-        require("semantic/semantic.min.js")
-        require("semantic/semantic.min.css")
-    }
 
     override fun start() {
         root("kvapp") {
@@ -28,14 +24,6 @@ class App : Application() {
                 id = "login-btn"
             }
         }
-/*
-        eval("""
-        $(document).ready(function() {
-            $('.ui.modal').modal()
-            $('.ui.modal').modal("attach events", "#login-btn")
-        })
-        """.trimIndent())
-*/
 
         jQuery(document).ready {
             it!!(".ui.modal").asDynamic().modal()
