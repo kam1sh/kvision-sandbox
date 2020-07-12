@@ -1,50 +1,33 @@
-package com.example
+<!DOCTYPE html>
+<html>
 
-import com.github.snabbdom.VNode
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.promise
-import org.w3c.dom.get
-import pl.treksoft.jquery.JQueryStatic
-import pl.treksoft.jquery.jQuery
-import pl.treksoft.kvision.Application
-import pl.treksoft.kvision.html.Div
-import pl.treksoft.kvision.html.div
-import pl.treksoft.kvision.html.span
-import pl.treksoft.kvision.panel.ContainerType
-import pl.treksoft.kvision.panel.root
-import pl.treksoft.kvision.startApplication
-import pl.treksoft.kvision.require
-import kotlin.browser.document
-import kotlin.browser.window
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- <script type="text/javascript" src="/main.bundle.js"></script> -->
+    <script src="/semantic/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css">
+    <link rel="stylesheet" href="css/kvapp.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js"></script>
+    <link href="map/css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="map/js/ed3dmap.js"></script>
+    <title>Hello world</title>
+</head>
 
-fun runBlocking(block: suspend (scope : CoroutineScope) -> Unit): dynamic = GlobalScope.promise { block(this) }
-
-class App : Application() {
-
-    init {
-        require("css/kvapp.css")
-    }
-
-    override fun start() {}
-}
-
-
-class Map : Div() {
-    init {
-        id = "edmap"
-    }
-
-    override fun afterInsert(node: VNode) {
-        jQuery(document).ready {
-            loadMap()
-        }
-    }
-}
-
-fun loadMap() {
-    eval("""
-                            var systemsData = {
+<body>
+    <div class="full height">
+        <nav class="ui inverted menu" id="navbar">
+            <div class="ui container">
+                <a class="item" href="/lorem">LOREM</a>
+                <a class="item" href="/ipsum">IPSUM</a>
+            </div>
+        </nav>
+        <main role="main">
+            <div id="body">
+                <div id="edmap"></div>
+                <script type="text/javascript">
+var systemsData = {
    "categories":{
       "Site Types":{
          "100":{
@@ -119,13 +102,17 @@ fun loadMap() {
         withFullscreenToggle : true,
         json    : systemsData,
         starSprite: "textures/lensflare/star_round.png"
-
   });
+                </script>
+            </div>
+        </main>
+    </div>
+    <div id="extras"></div>
+    <footer class="footer">
+        <div class="ui container">
+            <span>Copyright lololol</span>
+        </div>
+    </footer>
+</body>
 
-                """.trimIndent())
-
-}
-
-fun main() {
-    startApplication(::App)
-}
+</html>
