@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>KVision App</title>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="main.bundle.js"></script>
-    <script src="semantic/semantic.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
-    <link rel="stylesheet" href="main.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="/main.bundle.js"></script>
+    <script src="/semantic/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css">
+    <link rel="stylesheet" href="/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js"></script>
+    <link href="map/css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="map/js/ed3dmap.js"></script>
+    <title>Hello world</title>
 </head>
+
 <body>
-<div id="kvapp"></div>
-<div id="extras">
-    <div id="auth-window" class="ui standard modal">
-        <div class="header">Modal title</div>
-        <div class="ui back deny button">Back</div>
+    <div class="full height">
+        <nav class="ui inverted menu" id="navbar">
+            <div class="ui container">
+                <a class="item" href="/lorem">LOREM</a>
+                <a class="item" href="/ipsum">IPSUM</a>
+                <div class="right menu">
+                    <div id="auth-panel">
+                        <span>ВОЙТИ</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main role="main">
+            <div id="body">
+                
+            </div>
+        </main>
     </div>
-</div>
+    <div id="extras"></div>
+    <footer class="footer">
+        <div class="ui container">
+            <span>Copyright lololol</span>
+        </div>
+    </footer>
 </body>
+
 </html>
